@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,6 +26,7 @@ public class Person {
 	
 	public void claim(Topic topic, Focus focus, int priority) {
 		new Claim(this, topic, focus, priority, component);
+		Collections.sort(claims);
 	}
 	
 	public void assign(Claim claim) {

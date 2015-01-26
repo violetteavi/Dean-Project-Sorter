@@ -38,4 +38,8 @@ public class TopicComponent {
 	public void addPerson(Person person) {
 		persons.add(person);
 	}
+
+	public List<Person> getPersons() {
+		return persons;
+	}
 }

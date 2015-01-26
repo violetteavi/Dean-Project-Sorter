@@ -1,6 +1,6 @@
 package model;
 
-public class Claim {
+public class Claim implements Comparable<Claim> {
 
 	private Person person;
 	private Topic topic;
@@ -72,5 +72,18 @@ public class Claim {
 
 	public void setComponent(TopicComponent component) {
 		this.component = component;
+	}
+
+	@Override
+	public int compareTo(Claim that) {
+		if(this.getPriority()<that.getPriority()) {
+			return -1;
+		} else if (this.getPriority()==that.getPriority()) {
+			return 0;
+		} else if(that.getPriority() < this.getPriority()){
+			return 1;
+		} else {
+			return 0;
+		}
 	}	
 }
